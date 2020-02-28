@@ -10,7 +10,7 @@
   <a href="https://github.com/thsvr/weather-app"> 
   <img src="public/img/mLogo.png" alt="Logo" width="80" height="80"> 
   </a> 
-  <h3 align="center">Todo List - <a href=''> Live version in progress</a></h3> 
+  <h3 align="center">Weather App <a href=''> Live version in progress</a></h3> 
   <p align="center"> This project is part of the Microverse Javacript Section 
   <br /> 
   <a href="https://github.com/thsvr/weather-app/issues">Report Bug</a> 
