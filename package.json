@@ -1,0 +1,30 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --watch --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thsvr/weather-app.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "vrths",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thsvr/weather-app/issues"
+  },
+  "homepage": "https://github.com/thsvr/weather-app#readme",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
