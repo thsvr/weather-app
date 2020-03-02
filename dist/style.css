@@ -11,9 +11,15 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-image: url("main-bg-3.jpg");
-  background-size: cover;
+  background: #a80077;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #66ff00, #a80077);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #66ff00, #a80077); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  /* background-image: url("main-bg-3.jpg");
+  background-size: cover; */
 }
+
 
 
 article, h1 {
