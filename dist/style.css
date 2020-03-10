@@ -14,12 +14,30 @@ body {
 
 ul {
   list-style: none;
+  max-width: 1200px;
+  width: 100%;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.x-padd {
+  padding: 0 5px;
+}
+
+.c-yellow {
+  color: yellow
+}
+
+.c-red {
+  color: red;
+}
+
+.c-blue {
+  color: blue;
 }
 
 .container {
@@ -42,16 +60,17 @@ img {
   padding: 5px 0 50px 0;
 }
 
-.fas, h1 {
+.fa-globe-americas, 
+.fa-globe-europe,
+.fa-globe-asia,
+.fa-globe-africa,
+h1 {
   font-size: 45px;
   background: -webkit-linear-gradient(#eee, yellow, red, blue, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.fas {
   padding: 0 10px;
-} 
+}
 
 /* SECOND SECTION - INPUT */
 
@@ -67,7 +86,20 @@ img {
   align-items: center;
 }
 
-/* .check-by-city form input { */
+.city-name {
+  font-size: 35px;
+  background: -webkit-linear-gradient(yellow, red, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.country-name {
+  font-size: 15px;
+  background: -webkit-linear-gradient(yellow, red, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
   .search-city {
   font-size: 1.2rem;
   height: 35px;
@@ -77,15 +109,10 @@ img {
   border-radius: 10px;
 }
 
-/* .check-by-city form input::placeholder {
-  color: #979593; 
-} */
-
 .search-city::placeholder {
   color: lightslategray;
 }
 
-/* .check-by-city form button { */
   .btn-ckeck-w {
     cursor: pointer;
     font-size: 1rem;
@@ -95,7 +122,6 @@ img {
     border-radius: 5px;
     background:  -webkit-linear-gradient(yellow, red, blue);
     opacity: 0.6;
-    /* transition: background 0.3s ease-in-out; */
 }
 
 .btn-ckeck-w:hover {
@@ -116,3 +142,84 @@ h2 {
 }
 
 /* THIRD SECTION - CARDS */
+
+.card-city {
+  margin: 30px 0 20px;
+}
+
+.container-2 {
+  padding: 0 15px;
+}
+
+.card-city .city {
+  position: relative;
+  padding: 25px 10%;
+  border-radius: 20px;
+  background: lightsteelblue;
+}
+
+.card-city .location {
+  display: grid;
+  grid-gap: 30px 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-city .city-temp { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: darkslategray;
+}
+
+.icon-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-city .weather-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px; 
+}
+
+.btn-temp {
+  color: blue;
+  font-weight: bolder;
+  background-color: rgb(211, 214, 218);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.kelvin-info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kelvin-info p {
+  padding-right: 10px;
+}
+
+.kelvin-info div {
+  padding-left: 10px;
+}
+
+.extra-info {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.extra-info p {
+  line-height: 25px;
+}
+
+.info-by {
+  margin-top: 40px;
+  font-size: 10px;
+  color: #535353;
+}

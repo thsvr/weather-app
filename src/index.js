@@ -21,21 +21,21 @@ searchForm.addEventListener("submit", event => {
         if (chosenCity.split(",")[1].length > 2) {
           chosenCity = chosenCity.split(",")[0];
           info = element
-            .querySelector(".city-name span") //allow more than 1 city
+            .querySelector(".city-country span") //allow more than 1 city
             .textContent//.toLowerCase();
 
         } else {
-          info = element.querySelector(".city-name").dataset.name//.toLowerCase();
+          info = element.querySelector(".city-country").dataset.name//.toLowerCase();
         }
       } else {      
-        info = element.querySelector(".city-name span").textContent//.toLowerCase();        
+        info = element.querySelector(".city-country span").textContent//.toLowerCase();        
       }
       return info == chosenCity//.toLowerCase();
     });
 
     if (newArrCity.length > 0) {
       warning.textContent = `${
-        newArrCity[0].querySelector(".city-name span").textContent
+        newArrCity[0].querySelector(".city-country span").textContent
       } is displayed below but you can check for another location that isn't displayed yet.`;
       searchForm.reset();
       searchCity.focus();
@@ -69,34 +69,34 @@ searchForm.addEventListener("submit", event => {
       list.classList.add("city");  
 
       const card = `
-        <h1 class="city-name" data-name="${name},${sys.country}">
-          <span>${name}</span>
-          <span>${sys.country}</span>
-        </h1> 
+        <article class="city-country" data-name="${name},${sys.country}">
+          <span class="city-name">${name}</span>
+          <span class="country-name">${sys.country}</span>
+        </article> 
 
         <article class="city-temp">
-          <div id="switchFar">${Math.round(main.temp)}°C</div>
-          <p><button onclick="switchTempToFar()" id="btn-test" class="btn-temp">Swith temp to f</button></p>
+          <div id="switchFar"><i class="fas fa-thermometer-three-quarters"></i>${Math.round(main.temp)}°C</div>
+          <button onclick="switchTempToFar()" id="btn-test" class="btn-temp">Switch to °F</button>
         </article>
 
-        <article>
-          <img class="city-icon" src="${icon}" alt="${
+        <article class="icon-container">
+          <img class="weather-icon" src="${icon}" alt="${
         weather[0]["description"]}">
-          <p>${weather[0]["description"]}</p>
-        </article>     
-        
-        <article>
-          <p><button onclick="switchTempToKel()" id="btn-test2">Swith temp to k</button></p>
-          <div id="switchKel">${Math.round(main.temp)}°C</div>
-        </article>   
+          <p class="weather-desc">${weather[0]["description"]}</p>
+        </article>       
 
-        <article>
-          <p>Feels Like:${Math.round(main.feels_like)}°C</p>
-          <p>Max temperature:${Math.round(main.temp_max)}°C</p>
-          <p>Min temperature:${Math.round(main.temp_min)}°C</p>
+        <article class="extra-info">
+          <p><i class="fas fa-thermometer-three-quarters c-yellow"></i><span class="x-padd">Feels Like</span>${Math.round(main.feels_like)}°C</p>
+          <p><i class="fas fa-temperature-high c-red"></i><span class="x-padd">Max temp</span>${Math.round(main.temp_max)}°C</p>
+          <p><i class="fas fa-temperature-low c-blue"></i><span class="x-padd">Min temp</span>${Math.round(main.temp_min)}°C</p>
         </article>  
+
+        <article class="kelvin-info">
+          <button onclick="switchTempToKel()" id="btn-test2" class="btn-temp">Switch to °K</button>
+          <div id="switchKel">${Math.round(main.temp)}°C</div>
+        </article> 
         
-        <p>Info got by Open Weather App</p>
+        <p class="info-by"><i class="fas fa-info-circle"></i><span class="x-padd">Info got by Open Weather App<span></p>
         `;
 
         let checkTemp = false;
@@ -110,12 +110,12 @@ searchForm.addEventListener("submit", event => {
 
           if (checkTemp) { 
             x.innerHTML = cel;
-            y.innerHTML = 'Switch temp to f'; 
+            y.innerHTML = 'Switch to °F'; 
             checkTemp = false;               
 
             } else {
               x.innerHTML = far;
-              y.innerHTML = 'Switch temp to c';
+              y.innerHTML = 'Switch to °C';
               checkTemp = true;
             }
         };
@@ -131,12 +131,12 @@ searchForm.addEventListener("submit", event => {
 
         if (checkTemp2) { 
           a.innerHTML = cel;
-          b.innerHTML = 'Switch temp to k'; 
+          b.innerHTML = 'Switch to °K'; 
           checkTemp2 = false;               
 
           } else {
             a.innerHTML = kel;
-            b.innerHTML = 'Switch temp to c';
+            b.innerHTML = 'Switch to °C';
             checkTemp2 = true;
           }
       };
