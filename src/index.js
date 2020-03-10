@@ -43,5 +43,30 @@ searchForm.addEventListener("submit", event => {
     };    
   }
 
+  //PROMISE
+
+  const openWeatherApp = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&appid=${weatherKey}&units=metric`;
+  let wholeData;
+
+  fetch(openWeatherApp)
+    .then(response => response.json())
+    .then(data => {
+      const { main, name, sys, weather } = data;
+      wholeData = data;
+      console.log(wholeData);
+
+// SECOND OPTION OF ICONS: CHOOSE LATER 
+//       const icon = `https://openweathermap.org/img/wn/${
+//   weather[0]["icon"]
+// }@2x.png`;
+
+      const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
+        weather[0]["icon"]
+      }.svg`;
+
+      //do stuff with the data
+      const list = document.createElement("li");
+      list.classList.add("city");  
+
 }); //END
 
