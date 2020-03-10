@@ -139,8 +139,18 @@ searchForm.addEventListener("submit", event => {
             b.innerHTML = 'Switch temp to c';
             checkTemp2 = true;
           }
-      };  
+      };
+      list.innerHTML = card;
+      location.appendChild(list);
+    })
 
+    //when some error occurs
+    .catch(() => {
+      warning.textContent = "I'm afraid we don't know the weather of this city.";
+    });
 
+  warning.textContent = "";
+  searchForm.reset();
+  searchCity.focus(); 
 }); //END
 
