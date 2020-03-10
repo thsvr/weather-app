@@ -1,3 +1,4 @@
+/* ALL SECTIONS */
 * {
   margin: 0;
   padding: 0;
@@ -5,32 +6,63 @@
 }
 
 body {
-  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  background: #cfd3dc;
+  color: #433d35;
+  padding: 50px; 
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: #a80077;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #66ff00, #a80077);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #66ff00, #a80077); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  flex-direction: column;
+}
 
+/* FIRST SECTION - TITLE */
 
-  /* background-image: url("main-bg-3.jpg");
-  background-size: cover; */
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px 0 50px 0;
+}
+
+.fas {
+  padding: 0 10px;
+  font-size: 45px;
+  background: -webkit-linear-gradient(#eee, yellow, red, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 45px;
+  background: -webkit-linear-gradient(#eee, yellow, red, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 }
 
 
 
-article, h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px;
-  border: 5px solid rgb(172, 172, 172);
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 2px 2px 2px 2px #000000;
-  padding: 30px;
-  background-color: aliceblue;
-}
+/* SECOND SECTION - INPUT */
+
+
+
+/* THIRD SECTION - CARDS */
