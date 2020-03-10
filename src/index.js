@@ -154,3 +154,14 @@ searchForm.addEventListener("submit", event => {
   searchCity.focus(); 
 }); //END
 
+const getWholeData = (data) => {
+  const getWeather = () => {
+    return {description, icon, main} = data.weather[0];
+  }
+  return { getWeather, getTemp }
+} 
+
+console.log(getWholeData(wholeData).getWeather().description)
+
+//main, name, sys, weather, feels_like, temp_max, temp_min, temp
+
