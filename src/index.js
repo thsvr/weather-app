@@ -101,26 +101,46 @@ searchForm.addEventListener("submit", event => {
 
         let checkTemp = false;
             
-            switchTempToFar = () => {
-              let x = document.getElementById("switchFar");
-              let y = document.getElementById("btn-test");
+        switchTempToFar = () => {
+          let x = document.getElementById("switchFar");
+          let y = document.getElementById("btn-test");
 
-              let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
-              let far = `<p id="f">${Math.floor((main.temp)*1.8 + 32)}°F</p>`;
+          let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
+          let far = `<p id="f">${Math.floor((main.temp)*1.8 + 32)}°F</p>`;
 
-              if (checkTemp) { 
-                x.innerHTML = cel;
-                y.innerHTML = 'Switch temp to f'; 
-                checkTemp = false;               
+          if (checkTemp) { 
+            x.innerHTML = cel;
+            y.innerHTML = 'Switch temp to f'; 
+            checkTemp = false;               
 
-                } else {
-                  x.innerHTML = far;
-                  y.innerHTML = 'Switch temp to c';
-                  checkTemp = true;
-                }
-            };
+            } else {
+              x.innerHTML = far;
+              y.innerHTML = 'Switch temp to c';
+              checkTemp = true;
+            }
+        };
 
-            checkTemp2 = false;
+      let checkTemp2 = false;
+
+      switchTempToKel = () => {
+        let a = document.getElementById("switchKel");
+        let b = document.getElementById("btn-test2");
+
+        let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
+        let kel = `<p id="k">${Math.floor((main.temp)+273.15)}°K</p>`;
+
+        if (checkTemp2) { 
+          a.innerHTML = cel;
+          b.innerHTML = 'Switch temp to k'; 
+          checkTemp2 = false;               
+
+          } else {
+            a.innerHTML = kel;
+            b.innerHTML = 'Switch temp to c';
+            checkTemp2 = true;
+          }
+      };  
+
 
 }); //END
 
