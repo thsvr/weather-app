@@ -5,6 +5,7 @@ const warning = document.querySelector(".check-by-city .warning");
 const location = document.querySelector(".card-city .location");
 
 // DOM MANIPULATION
+let index = 0;
 
 searchForm.addEventListener("submit", event => {
   event.preventDefault();
@@ -92,7 +93,7 @@ searchForm.addEventListener("submit", event => {
         </article>  
 
         <article class="kelvin-info">
-          <button onclick="switchTempToKel()" id="btn-test2" class="btn-temp">Switch to °K</button>
+          <button onclick="switchTempToKel()" data-index="${++index}" id="btn-test${++index}" class="btn-temp">Switch to °K</button>
           <div id="switchKel">${Math.round(main.temp)}°C</div>
         </article> 
         
