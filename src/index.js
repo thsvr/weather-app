@@ -68,5 +68,36 @@ searchForm.addEventListener("submit", event => {
       const list = document.createElement("li");
       list.classList.add("city");  
 
+      const card = `
+        <h1 class="city-name" data-name="${name},${sys.country}">
+          <span>${name}</span>
+          <span>${sys.country}</span>
+        </h1> 
+
+        <article class="city-temp">
+          <div id="switchFar">${Math.round(main.temp)}°C</div>
+          <p><button onclick="switchTempToFar()" id="btn-test" class="btn-temp">Swith temp to f</button></p>
+        </article>
+
+        <article>
+          <img class="city-icon" src="${icon}" alt="${
+        weather[0]["description"]}">
+          <p>${weather[0]["description"]}</p>
+        </article>     
+        
+        <article>
+          <p><button onclick="switchTempToKel()" id="btn-test2">Swith temp to k</button></p>
+          <div id="switchKel">${Math.round(main.temp)}°C</div>
+        </article>   
+
+        <article>
+          <p>Feels Like:${Math.round(main.feels_like)}°C</p>
+          <p>Max temperature:${Math.round(main.temp_max)}°C</p>
+          <p>Min temperature:${Math.round(main.temp_min)}°C</p>
+        </article>  
+        
+        <p>Info got by Open Weather App</p>
+        `;
+
 }); //END
 
