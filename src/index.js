@@ -99,5 +99,28 @@ searchForm.addEventListener("submit", event => {
         <p>Info got by Open Weather App</p>
         `;
 
+        let checkTemp = false;
+            
+            switchTempToFar = () => {
+              let x = document.getElementById("switchFar");
+              let y = document.getElementById("btn-test");
+
+              let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
+              let far = `<p id="f">${Math.floor((main.temp)*1.8 + 32)}°F</p>`;
+
+              if (checkTemp) { 
+                x.innerHTML = cel;
+                y.innerHTML = 'Switch temp to f'; 
+                checkTemp = false;               
+
+                } else {
+                  x.innerHTML = far;
+                  y.innerHTML = 'Switch temp to c';
+                  checkTemp = true;
+                }
+            };
+
+            checkTemp2 = false;
+
 }); //END
 
