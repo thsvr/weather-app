@@ -1,8 +1,21 @@
 const weatherKey = "6080e17b0fc07b99a71fde330eb48aed";
+
 const searchForm = document.querySelector(".check-by-city .search-form");
 const searchCity = document.querySelector(".check-by-city .search-city");
 const warning = document.querySelector(".check-by-city .warning");
 const location = document.querySelector(".card-city .location");
+const iconImg = document.querySelector('.icon-container > img');
+const desc = document.querySelector('.icon-container > p');
+const infoBy = document.querySelector('.info-by > p');
+const cityTemp = document.querySelector('.city-temp > div');
+const cityCountry = document.querySelectorAll('.city-country > span');
+const extraInfo = document.querySelectorAll('.extra-info > p');
+
+let a = document.getElementById("switchKel");
+let b = document.getElementById('temp-toggle');
+let c = document.getElementById("main-temp");
+let d = document.getElementById("btn-main-temp");
+
 
 // DOM MANIPULATION
 let index = 0;
