@@ -65,22 +65,18 @@ searchForm.addEventListener("submit", event => {
   fetch(openWeatherApp)
     .then(response => response.json())
     .then(data => {
-      const { main, name, sys, weather } = data;
-      wholeData = data;
-      console.log(wholeData);
+      dataArray.push(data);
 
-// SECOND OPTION OF ICONS: CHOOSE LATER 
-//       const icon = `https://openweathermap.org/img/wn/${
-//   weather[0]["icon"]
-// }@2x.png`;
-
-      const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
-        weather[0]["icon"]
-      }.svg`;
-
-      //do stuff with the data
-      const list = document.createElement("li");
-      list.classList.add("city");  
+      domContainer(data);
+    })
+    //when some error occurs
+    .catch(() => {
+      warning.textContent = "I'm afraid we don't know the weather of this city.";
+    });
+  warning.textContent = "";
+  searchForm.reset();
+  searchCity.focus();
+}); //END OF PROMISSE
 
       const card = `
         <article class="city-country" data-name="${name},${sys.country}">
