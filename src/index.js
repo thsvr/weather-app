@@ -32,8 +32,8 @@ const dataArray = [];
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
-  let index = -1;
-  //index += 1;
+  // let index = -1;
+  // index += 1;
   const chosenCity = searchCity.value;
   // const cityListed = location.querySelectorAll('.card-city .city');
   // const arrCities = Array.from(cityListed);
@@ -47,30 +47,30 @@ searchForm.addEventListener('submit', event => {
     const toggleTempF = (elem, cc, tempInfo) => {
       const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
       const faren = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo * (9 / 5) + 32)}°F`;
-        if (checkTempF) { 
-          cc.innerHTML = cel;
-          elem.innerHTML = 'Switch to °F'; 
-          checkTempF = false;
-        } else {
-          cc.innerHTML = faren;
-          elem.innerHTML = 'Switch to °C';
-          checkTempF = true;
-        };
-    };
+      if (checkTempF) { 
+        cc.innerHTML = cel;
+        elem.innerHTML = 'Switch to °F'; 
+        checkTempF = false;
+      } else {
+        cc.innerHTML = faren;
+        elem.innerHTML = 'Switch to °C';
+        checkTempF = true;
+      }
+  };
     let checkTemp = false;
-    let toggleTemp = (elem, c, tempInfo) => {
-      let cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
-      let kel = `<p>${Math.round((tempInfo)+273.15)}°K</p>`;
-        if (checkTemp) { 
-          c.innerHTML = cel;
-          elem.innerHTML = 'Switch to °K'; 
-          checkTemp = false;
-        } else {
-          c.innerHTML = kel;
-          elem.innerHTML = 'Switch to °C';
-          checkTemp = true;
-        };
-    };
+    const toggleTemp = (elem, c, tempInfo) => {
+      const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
+      const kel = `<p>${Math.round((tempInfo) + 273.15)}°K</p>`;
+      if (checkTemp) {  
+        c.innerHTML = cel;
+        elem.innerHTML = 'Switch to °K'; 
+        checkTemp = false;
+      } else {
+        c.innerHTML = kel;
+        elem.innerHTML = 'Switch to °C';
+        checkTemp = true;
+      };
+  };
     list.classList.add('city');
     cityCountry[0].innerHTML = info.getPlace()[0];
     cityCountry[1].innerHTML = info.getPlace()[1];
