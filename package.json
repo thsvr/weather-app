@@ -33,20 +33,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2"
-  },
-  "eslint.validate": {  
-        "language":"javascript",
-        "autoFix":true
-  },
-  "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true
-      }
-  },
-  "rules": {
-      "semi": "error"
   }
 }
 
