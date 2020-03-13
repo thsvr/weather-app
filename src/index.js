@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 /* eslint-disable no-param-reassign */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-restricted-globals */
@@ -61,15 +62,15 @@ searchForm.addEventListener('submit', event => {
       }
     };
     let checkTemp = false;
-    const toggleTemp = (elem, c, tempInfo) => {
+    const toggleTemp = (elem, ccc, tempInfo) => {
       const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
       const kel = `<p>${Math.round((tempInfo) + 273.15)}°K</p>`;
       if (checkTemp) {
-        c.innerHTML = cel;
+        ccc.innerHTML = cel;
         elem.innerHTML = 'Switch to °K';
         checkTemp = false;
       } else {
-        c.innerHTML = kel;
+        ccc.innerHTML = kel;
         elem.innerHTML = 'Switch to °C';
         checkTemp = true;
       }
