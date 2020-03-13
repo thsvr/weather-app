@@ -3,7 +3,7 @@ const weatherKey = '6080e17b0fc07b99a71fde330eb48aed';
 const searchForm = document.querySelector('.check-by-city .search-form');
 const searchCity = document.querySelector('.check-by-city .search-city');
 const warning = document.querySelector('.check-by-city .warning');
-const location = document.querySelector('.card-city .location');
+//const location = document.querySelector('.card-city .location');
 const iconImg = document.querySelector('.icon-container > img');
 const desc = document.querySelector('.icon-container > p');
 const cityTemp = document.querySelector('.city-temp > div');
@@ -26,22 +26,54 @@ const getWholeData = (data) => {
   const getPlace = () => {
     return [name, country] = [data.name, data.sys.country];
   };
-  return { getWeather, getTemp, getPlace }
+  return { getWeather, getTemp, getPlace };
 };
 
-let index = -1;
+// let index = -1;
 const dataArray = [];
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
-  index +=1 ;
+  let index = -1;
+  index += 1;
 
   const chosenCity = searchCity.value;
-  //const cityListed = location.querySelectorAll('.card-city .city');
-  //const arrCities = Array.from(cityListed);   
+
+  // const cityListed = location.querySelectorAll('.card-city .city');
+  // const arrCities = Array.from(cityListed);   
 
   const openWeatherApp = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&appid=${weatherKey}&units=metric`;
-  //let wholeData;
+  
+  // let wholeData;
+
+  const domContainer = (data) => {
+    //const { main, name, sys, weather } = data;
+    const info = getWholeData(data);
+    const list = document.createElement('li');
+    list.classList.add('city');
+    cityCountry[0].innerHTML = info.getPlace()[0];
+    cityCountry[1].innerHTML = info.getPlace()[1];
+    cityTemp.innerHTML = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(info.getTemp().temp)}°C`;
+    iconImg.src = `http://openweathermap.org/img/wn/${info.getWeather().icon}@2x.png`;
+    desc.innerHTML = info.getWeather().description;
+  
+    extraInfo[0].innerHTML = `<i class='fas fa-thermometer-three-quarters c-yellow'></i>
+              <span class='x-padd'>Feels Like</span>
+              ${Math.round(info.getTemp().feels_like)}°C`;
+  
+    extraInfo[1].innerHTML = `<i class='fas fa-temperature-high c-red'></i>
+              <span class='x-padd'>Max temp</span>${Math.round(info.getTemp().temp_max)}°C`;
+  
+    extraInfo[2].innerHTML = `<i class='fas fa-temperature-low c-blue'></i>
+              <span class='x-padd'>Min temp</span>${Math.round(info.getTemp().temp_min)}°C`;
+  
+    a.innerHTML = `${Math.round(info.getTemp().temp)}°C`;
+    // console.log(data)
+    d.style.display = 'block';
+    b.style.display = 'inline';
+    b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp)});
+    d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp)});
+  };
 
   fetch(openWeatherApp)
     .then(response => response.json())
@@ -92,34 +124,7 @@ let toggleTemp = (elem, c, tempInfo) => {
     };
 };
 
-const domContainer = (data) => {
-  //const { main, name, sys, weather } = data;
-  const info = getWholeData(data);
-  const list = document.createElement('li');
-  list.classList.add('city');
-  cityCountry[0].innerHTML = info.getPlace()[0];
-  cityCountry[1].innerHTML = info.getPlace()[1];
-  cityTemp.innerHTML = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(info.getTemp().temp)}°C`;
-  iconImg.src = `http://openweathermap.org/img/wn/${info.getWeather().icon}@2x.png`;
-  desc.innerHTML = info.getWeather().description;
 
-  extraInfo[0].innerHTML = `<i class='fas fa-thermometer-three-quarters c-yellow'></i>
-            <span class='x-padd'>Feels Like</span>
-            ${Math.round(info.getTemp().feels_like)}°C`;
-
-  extraInfo[1].innerHTML = `<i class='fas fa-temperature-high c-red'></i>
-            <span class='x-padd'>Max temp</span>${Math.round(info.getTemp().temp_max)}°C`;
-
-  extraInfo[2].innerHTML = `<i class='fas fa-temperature-low c-blue'></i>
-            <span class='x-padd'>Min temp</span>${Math.round(info.getTemp().temp_min)}°C`;
-
-  a.innerHTML = `${Math.round(info.getTemp().temp)}°C`;
-  // console.log(data)
-  d.style.display = 'block';
-  b.style.display = 'inline';
-  b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp)});
-  d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp)});
-};
 
 
 
