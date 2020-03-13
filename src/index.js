@@ -78,7 +78,23 @@ const domContainer = (data) => {
   d.addEventListener('click', () => {toggleTempF(d, c, info.getTemp().temp)})
 }
 
+const getWholeData = (data) => {
 
+  const getWeather = () => {
+    return {description, icon, main} = data.weather[0];
+  }
+
+  const getTemp = () => {
+    return {temp, temp_max, temp_min, feels_like} = data.main;
+  }
+
+  const getPlace = () => {
+    return [name, country] = [data.name, data.sys.country];
+  }
+
+
+  return { getWeather, getTemp, getPlace }
+}
 
 let checkTemp = false;
 
