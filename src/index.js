@@ -15,21 +15,17 @@ const b = document.getElementById('temp-toggle');
 const c = document.getElementById('main-temp');
 const d = document.getElementById('btn-main-temp');
 
-/*eslint no-return-assign: ["error", "always"]*/
+/* eslint no-return-assign: ["error", "always"] */
 const getWholeData = (data) => {
-
   const getWeather = () => {
     return {description, icon, main} = data.weather[0];
   };
-
   const getTemp = () => {
     return {temp, temp_max, temp_min, feels_like} = data.main;
   };
-
   const getPlace = () => {
     return [name, country] = [data.name, data.sys.country];
   };
-
   return { getWeather, getTemp, getPlace }
 };
 
@@ -38,14 +34,14 @@ const dataArray = [];
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
-  index++;
+  index +=1 ;
 
-  let chosenCity = searchCity.value;
-  const cityListed = location.querySelectorAll('.card-city .city');
-  const arrCities = Array.from(cityListed);   
+  const chosenCity = searchCity.value;
+  //const cityListed = location.querySelectorAll('.card-city .city');
+  //const arrCities = Array.from(cityListed);   
 
   const openWeatherApp = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&appid=${weatherKey}&units=metric`;
-  // let wholeData;
+  //let wholeData;
 
   fetch(openWeatherApp)
     .then(response => response.json())
