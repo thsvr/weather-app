@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --watch --open"
+    "start": "webpack-dev-server --watch --open",
+    "lint": "eslint --fix --ext .js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,29 @@
   },
   "homepage": "https://github.com/thsvr/weather-app#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "axios": "^0.19.2"
+  },
+  "eslint.validate": {  
+        "language":"javascript",
+        "autoFix":true
+  },
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "rules": {
+      "semi": "error"
   }
 }
+

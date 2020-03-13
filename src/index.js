@@ -96,7 +96,7 @@ searchForm.addEventListener('submit', event => {
     .then(data => {
       dataArray.push(data);
       domContainer(data);
-    })    
+    })
     .catch(() => {
       warning.textContent = 'I\'m afraid we don\'t know the weather of this city.';
     });
@@ -104,9 +104,3 @@ searchForm.addEventListener('submit', event => {
   searchForm.reset();
   searchCity.focus();
 });
-
-
-
-
-
-
