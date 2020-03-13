@@ -1,3 +1,4 @@
+
 /* ALL SECTIONS */
 * {
   margin: 0;
@@ -141,6 +142,10 @@ h2 {
   color:red;
 }
 
+#temp-toggle, #btn-main-temp {
+  display: none;
+}
+
 /* THIRD SECTION - CARDS */
 
 .card-city {
@@ -182,8 +187,6 @@ h2 {
 
 .card-city .weather-icon {
   margin-top: 10px;
-  width: 100px;
-  height: 100px; 
 }
 
 .btn-temp {
@@ -224,8 +227,6 @@ h2 {
   color: #535353;
 }
 
-
-
 /* MEDIA QUERY MEDIUM */
 @media screen and (max-width: 768px) {
   .card-city .location {
@@ -252,3 +253,5 @@ h2 {
 }
 
 }
+
+
