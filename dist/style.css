@@ -68,7 +68,7 @@ img {
 h1 {
   font-size: 45px;
   background: -webkit-linear-gradient(#eee, yellow, red, blue, green);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0 10px;
 }
@@ -90,14 +90,14 @@ h1 {
 .city-name {
   font-size: 35px;
   background: -webkit-linear-gradient(yellow, red, blue, green);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .country-name {
   font-size: 15px;
   background: -webkit-linear-gradient(yellow, red, blue, green);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

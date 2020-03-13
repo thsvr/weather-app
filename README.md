@@ -72,7 +72,6 @@ This project was built using these technologies.
 <br />
 <br />
 
-
 <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
