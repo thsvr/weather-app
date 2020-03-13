@@ -1,5 +1,4 @@
 const weatherKey = '6080e17b0fc07b99a71fde330eb48aed';
-
 const searchForm = document.querySelector('.check-by-city .search-form');
 const searchCity = document.querySelector('.check-by-city .search-city');
 const warning = document.querySelector('.check-by-city .warning');
@@ -9,7 +8,6 @@ const desc = document.querySelector('.icon-container > p');
 const cityTemp = document.querySelector('.city-temp > div');
 const cityCountry = document.querySelectorAll('.city-country > span');
 const extraInfo = document.querySelectorAll('.extra-info > p');
-
 const a = document.getElementById('switchKel');
 const b = document.getElementById('temp-toggle');
 const c = document.getElementById('main-temp');
@@ -35,23 +33,20 @@ const dataArray = [];
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
   let index = -1;
-  index += 1;
-
+  //index += 1;
   const chosenCity = searchCity.value;
   // const cityListed = location.querySelectorAll('.card-city .city');
-  // const arrCities = Array.from(cityListed);   
-
+  // const arrCities = Array.from(cityListed);
   const openWeatherApp = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&appid=${weatherKey}&units=metric`;
   // let wholeData;
-
   const domContainer = (data) => {
     // const { main, name, sys, weather } = data;
     const info = getWholeData(data);
     const list = document.createElement('li');
     let checkTempF = false;
-    let toggleTempF = (elem, cc, tempInfo) => {
-      let cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
-      let faren = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo * (9 / 5) + 32)}°F`;
+    const toggleTempF = (elem, cc, tempInfo) => {
+      const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
+      const faren = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo * (9 / 5) + 32)}°F`;
         if (checkTempF) { 
           cc.innerHTML = cel;
           elem.innerHTML = 'Switch to °F'; 
@@ -96,19 +91,15 @@ searchForm.addEventListener('submit', event => {
     b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp)});
     d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp)});
   };
-
   fetch(openWeatherApp)
     .then(response => response.json())
     .then(data => {
       dataArray.push(data);
-
       domContainer(data);
-    })
-    
+    })    
     .catch(() => {
       warning.textContent = 'I\'m afraid we don\'t know the weather of this city.';
     });
-
   warning.textContent = '';
   searchForm.reset();
   searchCity.focus();
