@@ -80,69 +80,34 @@ const domContainer = (data) => {
 
 
 
-        let checkTemp = false;
-            
-        switchTempToFar = () => {
-          let x = document.getElementById("switchFar");
-          let y = document.getElementById("btn-test");
+let checkTemp = false;
 
-          let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
-          let far = `<p id="f">${Math.floor((main.temp)*1.8 + 32)}°F</p>`;
+const toggleTemp = (elem, c, tempInfo) => {
+  let cel = `<p>${tempInfo}°C<p>`;
+  let kel = `<p>${Math.round((tempInfo)+273.15)}°K</p>`;
+    if (checkTemp) { 
+      c.innerHTML = cel;
+      elem.innerHTML = 'Switch to °K'; 
+      checkTemp = false;
+    } else {
+      c.innerHTML = kel;
+      elem.innerHTML = 'Switch to °C';
+      checkTemp = true;
+    }
+}
 
-          if (checkTemp) { 
-            x.innerHTML = cel;
-            y.innerHTML = 'Switch to °F'; 
-            checkTemp = false;               
+let checkTempF = false;
 
-            } else {
-              x.innerHTML = far;
-              y.innerHTML = 'Switch to °C';
-              checkTemp = true;
-            }
-        };
-
-      let checkTemp2 = false;
-
-      switchTempToKel = () => {
-        let a = document.getElementById("switchKel");
-        let b = document.getElementById("btn-test2");
-
-        let cel = `<p id="c">${Math.round(main.temp)}°C<p>`;
-        let kel = `<p id="k">${Math.floor((main.temp)+273.15)}°K</p>`;
-
-        if (checkTemp2) { 
-          a.innerHTML = cel;
-          b.innerHTML = 'Switch to °K'; 
-          checkTemp2 = false;               
-
-          } else {
-            a.innerHTML = kel;
-            b.innerHTML = 'Switch to °C';
-            checkTemp2 = true;
-          }
-      };
-      list.innerHTML = card;
-      location.appendChild(list);
-    })
-
-    //when some error occurs
-    .catch(() => {
-      warning.textContent = "I'm afraid we don't know the weather of this city.";
-    });
-
-  warning.textContent = "";
-  searchForm.reset();
-  searchCity.focus(); 
-}); //END
-
-const getWholeData = (data) => {
-  const getWeather = () => {
-    return {description, icon, main} = data.weather[0];
-  }
-  return { getWeather, getTemp }
-} 
-
-console.log(getWholeData(wholeData).getWeather().description)
-
-//main, name, sys, weather, feels_like, temp_max, temp_min, temp
-
+const toggleTempF = (elem, c, tempInfo) => {
+  let cel = `<i class="fas fa-thermometer-three-quarters"></i>${Math.round(tempInfo)}°C`;
+  let faren = `<i class="fas fa-thermometer-three-quarters"></i>${Math.round(tempInfo * (9 / 5) + 32)}°F`;
+    if (checkTempF) { 
+      c.innerHTML = cel;
+      elem.innerHTML = 'Switch to °F'; 
+      checkTempF = false;
+    } else {
+      c.innerHTML = faren;
+      elem.innerHTML = 'Switch to °C';
+      checkTempF = true;
+    }
+}
