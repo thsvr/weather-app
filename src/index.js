@@ -60,7 +60,7 @@ searchForm.addEventListener('submit', event => {
         elem.innerHTML = 'Switch to °C';
         checkTempF = true;
       }
-  };
+    }
     let checkTemp = false;
     const toggleTemp = (elem, c, tempInfo) => {
       const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(tempInfo)}°C`;
@@ -73,8 +73,8 @@ searchForm.addEventListener('submit', event => {
         c.innerHTML = kel;
         elem.innerHTML = 'Switch to °C';
         checkTemp = true;
-      };
-  };
+      }
+    }
     list.classList.add('city');
     cityCountry[0].innerHTML = info.getPlace()[0];
     cityCountry[1].innerHTML = info.getPlace()[1];
@@ -93,7 +93,7 @@ searchForm.addEventListener('submit', event => {
     d.style.display = 'block';
     b.style.display = 'inline';
     b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp) });
-    d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp });
+    d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp) });
   };
 
   fetch(openWeatherApp)
