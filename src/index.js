@@ -89,7 +89,6 @@ searchForm.addEventListener('submit', event => {
     extraInfo[2].innerHTML = `<i class='fas fa-temperature-low c-blue'></i>
               <span class='x-padd'>Min temp</span>${Math.round(info.getTemp().temp_min)}°C`;  
     a.innerHTML = `${Math.round(info.getTemp().temp)}°C`;
-    // console.log(data)
     d.style.display = 'block';
     b.style.display = 'inline';
     b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp) });
