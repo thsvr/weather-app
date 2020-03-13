@@ -224,6 +224,8 @@ h2 {
   color: #535353;
 }
 
+
+
 /* MEDIA QUERY MEDIUM */
 @media screen and (max-width: 768px) {
   .card-city .location {

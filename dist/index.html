@@ -19,30 +19,64 @@
 </head>
 <body>
 
-    <section class="title">
-      <i class="fas fa-globe-americas"></i>
-      <i class="fas fa-globe-europe"></i>
-      <h1>Global Weather App</h1>
-      <i class="fas fa-globe-asia"></i>
-      <i class="fas fa-globe-africa"></i>
-    </section>
+    
+  <section class="title">
+    <i class="fas fa-globe-americas"></i>
+    <i class="fas fa-globe-europe"></i>
+    <h1>Global Weather App</h1>
+    <i class="fas fa-globe-asia"></i>
+    <i class="fas fa-globe-africa"></i>
+  </section>
 
-    <section class="check-by-city">
-      <article class="container container-1">      
-        <p class="instruction">Check the weather by typing the name of the city or the name of the city and the country</p>
-        <form class="search-form">
-          <input type="text" class="search-city" placeholder="City or City, Country" autofocus>
-          <button type="submit" class="btn-ckeck-w"><h2>CHECK WEATHER</h2></button>
-          <span class="warning"></span>
-        </form>
-      </article>
-    </section>
+  <section class="check-by-city">
+    <article class="container container-1">      
+      <p class="instruction">Check the weather by typing the name of the city or the name of the city and the country</p>
+      <form class="search-form">
+        <input type="text" class="search-city" placeholder="City or City, Country" autofocus>
+        <button type="submit" class="btn-ckeck-w"><h2>CHECK WEATHER</h2></button>
+        <span class="warning"></span>
+      </form>
+    </article>
+  </section>
 
-    <section class="card-city">
-      <article class="container container-2">
-        <ul class="location"></ul>
+  <section class="card-city">
+    <article class="container container-2">
+      <div class="location">
+        <article class="city-country">
+          <span class="city-name"></span>
+          <span class="country-name"></span>
+        </article> 
+
+      <article class="city-temp">
+        <div id="main-temp"></div>
+        <button id="btn-main-temp" class="btn-temp">Switch to °F</button>
       </article>
-    </section>    
+
+      <article class="icon-container">
+        <img class="weather-icon" alt="">
+        <p class="weather-desc"></p>
+      </article>       
+
+      <article class="extra-info">
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+      </article>
+        <article class="kelvin-info">
+          <button id="temp-toggle" class="btn-temp">Switch to °K</button>
+          <div id="switchKel"></div>
+        </article>        
+        <p class="info-by">
+          <i class="fas fa-info-circle"></i>
+          <span class="x-padd">Info got by Open Weather App<span>
+        </p>
+       
+      </div>
+    </article>
+  </section>  
   
 </body>
   <script type="text/javascript" src="./main.js"></script>
