@@ -88,8 +88,8 @@ searchForm.addEventListener('submit', event => {
     // console.log(data)
     d.style.display = 'block';
     b.style.display = 'inline';
-    b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp)});
-    d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp)});
+    b.addEventListener('click', () => { toggleTemp(b, a, info.getTemp().temp) });
+    d.addEventListener('click', () => { toggleTempF(d, c, info.getTemp().temp });
   };
   fetch(openWeatherApp)
     .then(response => response.json())
