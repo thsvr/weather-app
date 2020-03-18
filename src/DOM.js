@@ -15,10 +15,10 @@ export default (data) => {
   const list = document.createElement('li');
   let checkTempF = false;
   const toggleTempF = (elem, cc, tempInfo) => {
-    const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(
+    const cel = `<i class='fas fa-thermometer-three-quarters c-mix'></i>${Math.round(
       tempInfo,
     )}°C`;
-    const faren = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(
+    const faren = `<i class='fas fa-thermometer-three-quarters c-mix'></i>${Math.round(
       tempInfo * (9 / 5) + 32,
     )}°F`;
     if (checkTempF) {
@@ -36,7 +36,7 @@ export default (data) => {
     const cel = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(
       tempInfo,
     )}°C`;
-    const kel = `<p>${Math.round(tempInfo + 273.15)}°K</p>`;
+    const kel = `<i class='fas fa-thermometer-three-quarters'></i><p>${Math.round(tempInfo + 273.15)}°K</p>`;
     if (checkTemp) {
       ccc.innerHTML = cel;
       elem.innerHTML = 'Switch to °K';
@@ -56,16 +56,16 @@ export default (data) => {
   iconImg.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
   desc.innerHTML = data.description;
   extraInfo[0].innerHTML = `
-  <i class='fas fa-thermometer-three-quarters c-yellow'></i>
+  <i class='fas fa-thermometer-three-quarters c-green'></i>
   <span class='x-padd'>Feels Like</span>
   ${Math.round(data.feelsLike)}°C
   `;
   extraInfo[1].innerHTML = `
-  <i class='fas fa-temperature-high c-red'></i>
+  <i class='fas fa-temperature-high c-green'></i>
   <span class='x-padd'>Max temp</span>${Math.round(data.tempMax)}°C
   `;
   extraInfo[2].innerHTML = `
-  <i class='fas fa-temperature-low c-blue'></i>
+  <i class='fas fa-temperature-low c-green'></i>
   <span class='x-padd'>Min temp</span>${Math.round(data.tempMin)}°C
   `;
   a.innerHTML = `${Math.round(data.temp)}°C`;
