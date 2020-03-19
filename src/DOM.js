@@ -10,23 +10,22 @@ const a = document.getElementById('switchKel');
 const b = document.getElementById('temp-toggle');
 const c = document.getElementById('main-temp');
 const d = document.getElementById('btn-main-temp');
+const cardCity = document.getElementById('card-city');
 
-export default (data) => {
+export default (data, tempF = null) => {
   const list = document.createElement('li');
   let checkTempF = false;
   const toggleTempF = (elem, cc, tempInfo) => {
     const cel = `<i class='fas fa-thermometer-three-quarters c-mix'></i>${Math.round(
       tempInfo,
     )}°C`;
-    const faren = `<i class='fas fa-thermometer-three-quarters c-mix'></i>${Math.round(
-      tempInfo * (9 / 5) + 32,
-    )}°F`;
+    const elTempF = `<i class='fas fa-thermometer-three-quarters c-mix'></i>${Math.round(tempF)}°F`;
     if (checkTempF) {
       cc.innerHTML = cel;
       elem.innerHTML = 'Switch to °F';
       checkTempF = false;
     } else {
-      cc.innerHTML = faren;
+      cc.innerHTML = elTempF;
       elem.innerHTML = 'Switch to °C';
       checkTempF = true;
     }
@@ -77,4 +76,7 @@ export default (data) => {
   d.addEventListener('click', () => {
     toggleTempF(d, c, data.temp);
   });
+
+
+  cardCity.className = 'show';
 };

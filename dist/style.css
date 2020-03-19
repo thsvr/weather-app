@@ -154,13 +154,17 @@ h2 {
 
 /* THIRD SECTION - CARDS */
 
-.card-city {
-  display: flex;
+#card-city {
+  display: none;
   justify-content: center;
   flex-direction: column;
   border: 1px solid green;
   margin-left: 25%;
   margin-right: 25%;
+}
+
+#card-city.show{
+  display: flex;
 }
 
 /* .container-2 {
