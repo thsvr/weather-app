@@ -8,7 +8,7 @@
   <br/> 
   <p align="center"> 
   <a href="https://github.com/thsvr/weather-app"> 
-  <img src="public/img/mLogo.png" alt="Logo" width="80" height="80"> 
+  <img src="mLogo.png" alt="Logo" width="80" height="80"> 
   </a> 
   <h3 align="center">Weather App <a href=''> Live version in progress</a></h3> 
   <p align="center"> This project is part of the Microverse Javacript Section 
@@ -35,9 +35,9 @@
 
 This project consists in a application that users can check the weather condition typing the name of the city.
 
-<div align="center">
+<!-- <div align="center">
   <img src="public/img/todo.png" width="900">
-</div>
+</div> -->
 
 <!-- ABOUT THE PROJECT -->
 
@@ -71,7 +71,6 @@ This project was built using these technologies.
 
 <br />
 <br />
-
 
 <!-- ACKNOWLEDGEMENTS -->
 
