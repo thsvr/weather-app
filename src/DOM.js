@@ -76,7 +76,5 @@ export default (data, tempF = null) => {
   d.addEventListener('click', () => {
     toggleTempF(d, c, data.temp);
   });
-
-
   cardCity.className = 'show';
 };

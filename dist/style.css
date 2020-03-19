@@ -167,16 +167,6 @@ h2 {
   display: flex;
 }
 
-/* .container-2 {
-  padding: 0 15px;
-} */
-
-/* .card-city .city {
-  position: relative;
-  padding: 25px 10%;
-  border-radius: 20px;
-  background: lightsteelblue;
-} */
 
 .card-city .location {
   justify-content: center;
@@ -190,7 +180,6 @@ h2 {
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
-  /* margin: 20px 0; */
   color: darkslategray;
 }
 
@@ -252,14 +241,5 @@ h2 {
   padding-top: 5px;
 }
 
-/* MEDIA QUERY MEDIUM */
-@media screen and (max-width: 768px) {
-  
-}
-
-/* MEDIA QUERY SMALL */
-@media screen and (max-width: 600px) {
-
-}
 
 

@@ -2,7 +2,6 @@ export default (json) => {
   const { description, icon, main } = json.weather[0];
   const { temp } = json.main;
   const [name, country] = [json.name, json.sys.country];
-  // console.log(json.);
   return {
     description,
     icon,
