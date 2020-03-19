@@ -35,9 +35,9 @@
 
 This project consists in a application that users can check the weather condition typing the name of the city.
 
-<!-- <div align="center">
-  <img src="public/img/todo.png" width="900">
-</div> -->
+## Preview
+
+![](weather-app.gif)
 
 <!-- ABOUT THE PROJECT -->
 
