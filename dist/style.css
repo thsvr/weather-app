@@ -1,4 +1,3 @@
-
 /* ALL SECTIONS */
 * {
   margin: 0;
@@ -9,7 +8,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
-  background: #cfd3dc;
+  background: #99999b81;
   padding: 50px; 
 }
 
@@ -29,12 +28,19 @@ img {
   padding: 0 5px;
 }
 
-.c-yellow {
-  color: yellow
+.c-mix {
+  background: -webkit-linear-gradient(black, blue, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
-.c-red {
-  color: red;
+.c-green {
+  color: green;
+}
+
+.c-black {
+  color:black;
 }
 
 .c-blue {
@@ -67,7 +73,7 @@ img {
 .fa-globe-africa,
 h1 {
   font-size: 45px;
-  background: -webkit-linear-gradient(#eee, yellow, red, blue, green);
+  background: -webkit-linear-gradient(black, blue, green);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0 10px;
@@ -79,7 +85,6 @@ h1 {
   padding: 15px;
 }
 
-/* .check-by-city form { */
   .search-form {
   position: relative;
   padding-top: 25px;
@@ -89,14 +94,14 @@ h1 {
 
 .city-name {
   font-size: 35px;
-  background: -webkit-linear-gradient(yellow, red, blue, green);
+  background: -webkit-linear-gradient(black, blue, green);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .country-name {
   font-size: 15px;
-  background: -webkit-linear-gradient(yellow, red, blue, green);
+  background: -webkit-linear-gradient(black, blue, green);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -111,17 +116,18 @@ h1 {
 }
 
 .search-city::placeholder {
-  color: lightslategray;
+  color: rgb(136, 146, 156);
 }
 
   .btn-ckeck-w {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 7px;
     font-weight: bold;
     padding: 8px 10px;
     margin-left: 15px;
     border-radius: 5px;
-    background:  -webkit-linear-gradient(yellow, red, blue);
+    background: black;
+    color:white;
     opacity: 0.6;
 }
 
@@ -149,33 +155,38 @@ h2 {
 /* THIRD SECTION - CARDS */
 
 .card-city {
-  margin: 30px 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid green;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
-.container-2 {
+/* .container-2 {
   padding: 0 15px;
-}
+} */
 
-.card-city .city {
+/* .card-city .city {
   position: relative;
   padding: 25px 10%;
   border-radius: 20px;
   background: lightsteelblue;
-}
+} */
 
 .card-city .location {
-  display: grid;
-  grid-gap: 30px 20px;
-  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  flex-direction: column;
 }
 
-.card-city .city-temp { 
+/* .card-city  */
+.city-temp { 
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
-  margin: 20px 0;
+  /* margin: 20px 0; */
   color: darkslategray;
 }
 
@@ -224,33 +235,26 @@ h2 {
 .info-by {
   margin-top: 40px;
   font-size: 10px;
-  color: #535353;
+  color: #999898;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5px;
 }
 
 /* MEDIA QUERY MEDIUM */
 @media screen and (max-width: 768px) {
-  .card-city .location {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .btn-ckeck-w {
-    font-size: 0.7rem;
-    padding: 3px 5px;
-    margin-left: 5px;
-}
+  
 }
 
 /* MEDIA QUERY SMALL */
 @media screen and (max-width: 600px) {
-  .card-city .location {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .btn-ckeck-w {
-    font-size: 0.5rem;
-    padding: 2px 2px;
-    margin-left: 5px;
-}
 
 }
 
