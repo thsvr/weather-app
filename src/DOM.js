@@ -6,11 +6,13 @@ const desc = document.querySelector('.icon-container > p');
 const cityTemp = document.querySelector('.city-temp > div');
 const cityCountry = document.querySelectorAll('.city-country > span');
 const extraInfo = document.querySelectorAll('.extra-info > p');
+const cardCity = document.getElementById('card-city');
+// const timeInfo = document.querySelector('.time-info .day-time');
 const a = document.getElementById('switchKel');
 const b = document.getElementById('temp-toggle');
 const c = document.getElementById('main-temp');
 const d = document.getElementById('btn-main-temp');
-const cardCity = document.getElementById('card-city');
+
 
 export default (data, tempF = null) => {
   const list = document.createElement('li');
@@ -49,6 +51,7 @@ export default (data, tempF = null) => {
   list.classList.add('city');
   cityCountry[0].innerHTML = data.name;
   cityCountry[1].innerHTML = data.country;
+  // timeInfo.innerHTML = data.dateTime;
   cityTemp.innerHTML = `<i class='fas fa-thermometer-three-quarters'></i>${Math.round(
     data.temp,
   )}°C`;

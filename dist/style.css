@@ -8,8 +8,9 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
-  background: #99999b81;
-  padding: 50px; 
+  /* background: #f2f2f3; */
+  background-color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 35px; 
 }
 
 ul {
@@ -29,10 +30,9 @@ img {
 }
 
 .c-mix {
-  background: -webkit-linear-gradient(black, blue, green);
+  background: -webkit-linear-gradient(white, blue, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
 .c-green {
@@ -64,7 +64,8 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 5px 0 50px 0;
+  padding-top: 10px;
+  /* padding: 5px 0 1px 0; */
 }
 
 .fa-globe-americas, 
@@ -72,17 +73,14 @@ img {
 .fa-globe-asia,
 .fa-globe-africa,
 h1 {
-  font-size: 45px;
-  background: -webkit-linear-gradient(black, blue, green);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: 0 10px;
+  font-size: 30px;
+  padding: 0 5px;
 }
 
 /* SECOND SECTION - INPUT */
 
 .container-1 {
-  padding: 15px;
+  padding-bottom: 15px;
 }
 
   .search-form {
@@ -94,23 +92,16 @@ h1 {
 
 .city-name {
   font-size: 35px;
-  background: -webkit-linear-gradient(black, blue, green);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .country-name {
   font-size: 15px;
-  background: -webkit-linear-gradient(black, blue, green);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
   .search-city {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   height: 35px;
   padding: 5px 10px;
-  margin-left: 50px;
   border-bottom: 1px solid  #756f6b;
   border-radius: 10px;
 }
@@ -158,15 +149,17 @@ h2 {
   display: none;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid green;
-  margin-left: 25%;
-  margin-right: 25%;
+  border: 7px solid rgba(80, 80, 82, 0.897);
+  border-radius: 20px;
+  margin-left: 31%;
+  margin-right: 31%;
+  background-color: rgb(218, 216, 216);
+  padding: 5px 0;
 }
 
 #card-city.show{
   display: flex;
-}
-
+} 
 
 .card-city .location {
   justify-content: center;
